@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+dist/
+build/
+
+# SSL Certificates (sensitive - contains private key)
+cer/
+
+# User data (contains LINE user IDs)
+data.json
+
+# Agents/Persona (optional)
+# Get persona template at: https://github.com/pechpijit/copilot_agent_template
+agents/

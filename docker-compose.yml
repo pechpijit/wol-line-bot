@@ -1,0 +1,33 @@
+# ============================================
+# WoL LINE Bot - Docker Compose Configuration
+# ============================================
+# GitHub: https://github.com/pechpijit/wol-line-bot
+# ============================================
+
+version: '3.8'
+
+services:
+  wol-bot:
+    # Build image จาก Dockerfile ในโฟลเดอร์เดียวกัน
+    build: .
+    
+    # ชื่อ container
+    container_name: wol-line-bot
+    
+    # ใช้ network ของ host เพื่อให้ WoL และ Ping ทำงานได้ใน LAN
+    # สำคัญ: ถ้าใช้ bridge network จะ ping/wol ไม่ได้
+    network_mode: host
+    
+    # Restart อัตโนมัติเมื่อ container หยุดทำงาน
+    restart: always
+    
+    # โหลด environment variables จากไฟล์ .env
+    env_file:
+      - .env
+    
+    # Mount volumes
+    volumes:
+      # ข้อมูล user (read/write)
+      - ./data.json:/app/data.json
+      # SSL certificates (read-only)
+      - ./cer:/app/cer:ro

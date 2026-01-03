@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker files (not needed inside container)
+Dockerfile
+docker-compose.yml
+
+# Documentation
+*.md
+!README.md
+
+# Agents
+agents/
